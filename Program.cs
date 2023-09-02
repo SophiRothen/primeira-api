@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-using PrimeiraAPI.infraestrutura;
-using PrimeiraAPI.Model;
+using PrimeiraAPI.Domain.Model;
+using PrimeiraAPI.infraestrutura.Repositories;
 using System.Text;
 
 internal class Program
