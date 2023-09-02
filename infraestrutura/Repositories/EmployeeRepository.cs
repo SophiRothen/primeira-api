@@ -17,7 +17,7 @@ namespace PrimeiraAPI.infraestrutura.Repositories
 
         public List<EmployeeDTO> Get(int pageNumber, int pageQuantity)
         {
-            return _context.Employees.Skip((pageNumber - 1)* pageQuantity)
+            return _context.Employees.Skip((pageNumber - 1) * pageQuantity)
                 .Take(pageQuantity)
                 .Select(b =>
                 new EmployeeDTO()
