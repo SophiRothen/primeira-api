@@ -5,10 +5,11 @@ using PrimeiraAPI.Application.ViewModel;
 using PrimeiraAPI.Domain.DTOs;
 using PrimeiraAPI.Domain.Model;
 
-namespace PrimeiraAPI.Controllers
+namespace PrimeiraAPI.Controllers.v2
 {
     [ApiController]
-    [Route("api/v1/employee")]
+    [Route("api/v{version:apiVersion}/employee")]
+    [ApiVersion("2.0")]
     public class EmployeeController : ControllerBase
     {
         private readonly IEmployeeRepository _employeeRepository;
@@ -46,7 +47,7 @@ namespace PrimeiraAPI.Controllers
 
             var dataBytes = System.IO.File.ReadAllBytes(employee.photo);
 
-            return File (dataBytes, "image/png");
+            return File(dataBytes, "image/png");
         }
 
         [Authorize]

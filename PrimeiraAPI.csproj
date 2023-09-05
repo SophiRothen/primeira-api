@@ -7,9 +7,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Controllers\NovaPasta1\**" />
+    <Compile Remove="Controllers\NovaPasta2\**" />
+    <Compile Remove="Controllers\NovaPasta\**" />
     <Compile Remove="NovaPasta3\**" />
+    <Content Remove="Controllers\NovaPasta1\**" />
+    <Content Remove="Controllers\NovaPasta2\**" />
+    <Content Remove="Controllers\NovaPasta\**" />
     <Content Remove="NovaPasta3\**" />
+    <EmbeddedResource Remove="Controllers\NovaPasta1\**" />
+    <EmbeddedResource Remove="Controllers\NovaPasta2\**" />
+    <EmbeddedResource Remove="Controllers\NovaPasta\**" />
     <EmbeddedResource Remove="NovaPasta3\**" />
+    <None Remove="Controllers\NovaPasta1\**" />
+    <None Remove="Controllers\NovaPasta2\**" />
+    <None Remove="Controllers\NovaPasta\**" />
     <None Remove="NovaPasta3\**" />
   </ItemGroup>
 
@@ -17,6 +29,8 @@
     <PackageReference Include="AutoMapper" Version="12.0.1" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.10" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="5.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="5.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.7" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.9" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.9" />
