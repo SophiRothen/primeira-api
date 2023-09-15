@@ -25,7 +25,6 @@ internal class Program
         builder.Services.AddAutoMapper(typeof(DomainToDTOMapping));
 
         builder.Services.AddEndpointsApiExplorer();
-
         builder.Services.AddApiVersioning(o =>
         {
             o.AssumeDefaultVersionWhenUnspecified = true;
@@ -40,9 +39,6 @@ internal class Program
 
         builder.Services.AddSwaggerGen(c =>
         {
-
-            c.OperationFilter<SwaggerDefaultValues>();
-
             c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
             {
                 Name = "Authorization",
@@ -97,7 +93,6 @@ internal class Program
 
 
         var app = builder.Build();
-
         var versionDescriptionProvider = app.Services.GetRequiredService<IApiVersionDescriptionProvider>();
 
         // Configure the HTTP request pipeline.
