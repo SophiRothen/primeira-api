@@ -72,6 +72,17 @@ internal class Program
         builder.Services.AddTransient<IEmployeeRepository, EmployeeRepository>();
         builder.Services.AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigureSwaggerGenOptions>();
 
+
+        builder.Services.AddCors(options =>
+        {
+            options.AddPolicy(name: "MyPolicy",
+                policy =>
+                {
+                    policy.WithOrigins("http://").AllowAnyHeader().AllowAnyMethod();
+                });
+        });
+
+
         var key = Encoding.ASCII.GetBytes(PrimeiraAPI.Key.Secret);
 
         builder.Services.AddAuthentication(x =>
@@ -113,6 +124,8 @@ internal class Program
         {
             app.UseExceptionHandler("/error");
         }
+
+        app.UseCors("MyPolicy");
 
         app.UseHttpsRedirection();
 
